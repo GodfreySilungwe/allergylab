@@ -25,3 +25,18 @@ jobs:
           docker push ${{secrets.DOCKER_USERNAME }}/al-app:latest
           docker push ${{secrets.DOCKER_USERNAME }}/al-db-loader:latest
           docker push ${{secrets.DOCKER_USERNAME }}/al-email-loader:latest
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+     - name: "**PLACEHOLDER** Deploy to kubernets"
+       run : echo Placeholder for deployment
+     - name: Run containers
+       run : |
+         docker run -d ${{secrets.DOCKER_USERNAME}}/al-app:latest
+         docker run -d ${{secrets.DOCKER_USERNAME}}/al-db-loader:latest
+         docker run -d ${{secrets.DOCKER_USERNAME}}/al-email-loader:latest
+
+
+
+
