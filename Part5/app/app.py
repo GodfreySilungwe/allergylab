@@ -3,7 +3,7 @@ from dbconnect import connection
 import os
 import redis
 
-""" Build Flask App"""
+""" Build Flask Apps"""
 app = Flask(__name__)
 
 @app.route("/")
